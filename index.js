@@ -1,4 +1,4 @@
-// variables
+
 const generalBtn = document.getElementById("genral");
 const businessBtn = document.getElementById("business");
 const sportsBtn = document.getElementById("sport");
@@ -10,10 +10,8 @@ const newsQuery = document.getElementById("newsQuery");
 const newsType = document.getElementById("newsType");
 const newsdetails = document.getElementById("newsdetails");
 
-// Array
 var newsDataArr = [];
 
-// apis 
 const API_KEY = "38e423a18e664c8aacdf7b39c08e420e";
 const HEADLINES_NEWS = "https://newsapi.org/v2/top-headlines?country=in&apiKey=";
 const GENERAL_NEWS = "https://newsapi.org/v2/top-headlines?country=in&category=general&apiKey=";
@@ -83,7 +81,7 @@ const fetchGeneralNews = async () => {
         const myJson = await response.json();
         newsDataArr = myJson.articles;
     } else {
-        // handle errors
+       
         console.log(response.status, response.statusText);
         newsdetails.innerHTML = "<h5>No data found.</h5>"
         return;
@@ -116,7 +114,7 @@ const fetchEntertainmentNews = async () => {
         console.log(myJson);
         newsDataArr = myJson.articles;
     } else {
-        // handle errors
+   
         console.log(response.status, response.statusText);
         newsdetails.innerHTML = "<h5>No data found.</h5>"
         return;
@@ -180,11 +178,6 @@ const fetchQueryNews = async () => {
 function displayNews() {
 
     newsdetails.innerHTML = "";
-
-    // if(newsDataArr.length == 0) {
-    //     newsdetails.innerHTML = "<h5>No data found.</h5>"
-    //     return;
-    // }
 
     newsDataArr.forEach(news => {
 
