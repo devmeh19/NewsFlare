@@ -42,7 +42,4 @@ news-app/
 
 
 
-
-Endpoint: https://newsapi.org/v2/top-headlines
-
 Parameters used: country, category, q, pageSize, apiKey
